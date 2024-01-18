@@ -26,22 +26,35 @@
               </li>
             </ul>
             <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Enter a destination or keyword" aria-label="Search" style="width: 250px;">
-              <button class="btn btn-outline-success" type="submit" id="search">Search</button>
+              <input class="form-control me-2" type="search" id="search" placeholder="Enter a destination or keyword" aria-label="Search" style="width: 250px;">
+              <div class="d-grid gap-2 d-md-block">
+                <button class="btn btn-outline-success" type="submit" id="searchBtn">Search</button>
+                <button class="btn btn-outline-success" id="clearBtn">Clear</button>
+            </div>
             </form>
           </div>
         </div>
       </nav>
-         <div class="card text-center bg-transparent">
-            <div class="card-header" style="font-weight:bold;font-size:35px;color:white;padding:50px">
-                EXPLORE DREAM DESTINATION
-            </div>
-            <div class="card-body">
-              <p class="card-text" style="color:white;padding:30px">
-                It encourages exploration of unfamiliar territories,
+          <div class="row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <div class="card bg-transparent border border-0">
+                <div class="card-body text-center">
+                  <p class="card-text" style="font-weight:bold;font-size:40px;color:white;padding:50px">
+                    EXPLORE DREAM DESTINATION
+                   </p>
+                   <p class="card-text" style="font-size:20px;color:white;">
+                    It encourages exploration of unfamiliar territories,
                 embracing diverse cultures and landscapes, while persuing the 
                 desired destination that captivates the heart and ignites a sense 
-                of wonder.</p>
+                of wonder.
+                   </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card bg-transparent border-0" id="recommendations">
+                <!--Populate with javascript-->
+              </div>
             </div>
           </div>
           <script src="./travel_recommendation.js"></script>
