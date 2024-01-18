@@ -27,12 +27,48 @@
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Enter a destination or keyword" aria-label="Search" style="width: 250px;">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <button class="btn btn-outline-success" type="submit" id="search">Search</button>
             </form>
           </div>
         </div>
       </nav>
 
-      <h1>contact us page</h1>
+      <div class="row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          <div class="card bg-transparent border border-0">
+            <div class="card-body text-center">
+              <p class="card-text" style="font-weight:bold;font-size:40px;color:white;padding:50px">
+                CONTACT US
+               </p>
+               <p class="card-text" style="font-size:20px;color:white;">
+                Get in touch
+               </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card bg-transparent border-0">
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="email" placeholder="Enter your name">
+                  </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="5">Type your message...</textarea>
+                  </div>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="./travel_recommendation.js"></script>
 </body>
 </html>

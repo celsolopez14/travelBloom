@@ -1,27 +1,8 @@
 body {
-    background-image: url('./travel.jpg');
+    background-image: url('./img/travel.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
 }
 
-.title {
-    color: white;
-    font-weight: bold;
-    font-family: 'Times New Roman';
-    padding: 35px;
-    padding-top: 70px;
-    font-size: 60px;
-}
-
-.intro {
-
-    color: white;
-    font-weight: bold;
-    font-family: 'Times New Roman';
-    padding: 35px;
-    font-size: 25px;
-    max-width: 400px;
-
-}
