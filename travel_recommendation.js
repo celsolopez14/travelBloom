@@ -1,6 +1,75 @@
 const searchBtn = document.getElementById("searchBtn");
 const clearBtn = document.getElementById("clearBtn");
 
+const timeOptions = {
+    "Brazil": { 
+        timeZone: 'Brazil/East',
+        hour12: true,
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric' 
+    },
+    "Japan" : {
+        timeZone: 'Japan',
+        hour12: true,
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+    },
+    "Australia": {
+        timeZone: 'Etc/GMT+11',
+        hour12: true,
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+    },
+
+}
+;
+
+const countries = `brazil japan australia
+Nations
+    Sovereignty
+    Nationalities
+    Borders
+    Territories
+    International relations
+    Geography
+    National symbols
+    Citizenship
+    Government
+    Politics
+    Diplomacy
+    National identity
+    Country names
+    Multiculturalism
+    Homeland
+    Motherland
+    Foreign relations
+    National anthem
+    Capital cities
+    Flags
+    Diversity
+    Statehood
+    Patriotic
+    Global community
+    Regional cooperation
+    Homeland security
+    Independence
+    Country codes
+    National pride
+    Country borders
+    Federalism
+    Unity in diversity
+    State sovereignty
+    International cooperation
+    Nation-building
+    Territorial integrity
+    Constitutionalism
+    National history
+    Peaceful coexistence `
+
+
 const keywords = {
     beaches: `Sandy beaches 
     Tropical shores 
@@ -43,7 +112,7 @@ const keywords = {
     Seagrass meadows
     Coastal sunsets`,
 
-    temples: `    Ancient temples
+    temples: `Ancient temples
     Historical shrines
     Sacred places
     Religious monuments
@@ -83,47 +152,6 @@ const keywords = {
     Place of contemplation
     Religious heritage
     Temple artistry`,
-
-    countries:`    Nations
-    Sovereignty
-    Nationalities
-    Borders
-    Territories
-    International relations
-    Geography
-    National symbols
-    Citizenship
-    Government
-    Politics
-    Diplomacy
-    National identity
-    Country names
-    Multiculturalism
-    Homeland
-    Motherland
-    Foreign relations
-    National anthem
-    Capital cities
-    Flags
-    Diversity
-    Statehood
-    Patriotic
-    Global community
-    Regional cooperation
-    Homeland security
-    Independence
-    Country codes
-    National pride
-    Country borders
-    Federalism
-    Unity in diversity
-    State sovereignty
-    International cooperation
-    Nation-building
-    Territorial integrity
-    Constitutionalism
-    National history
-    Peaceful coexistence`
 };
 async function fetchApi(event) {
     try {
@@ -139,10 +167,14 @@ async function fetchApi(event) {
 }
 
 function keywordSearch(input, json){
+    const time = new Date().toLocaleTimeString('en-US', timeOptions["Australia"]);
+    console.log("Current time:", time);
+
     const currInput = input.toLowerCase();
     let result = [];
     Object.entries(keywords).map( word =>{
-        if(word[1].includes(currInput)){
+        let currKeywords = word[1].toLowerCase();
+        if(currKeywords.includes(currInput)){
             json[word[0]].forEach(city =>{
                 result.push(city);
             })
